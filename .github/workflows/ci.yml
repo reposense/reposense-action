@@ -21,7 +21,8 @@ jobs:
     - name: Install dependencies
       run: pip install requests
     - name: Generate report
-      run: bash ./run.sh
+      run: sudo ./run.sh
+      shell: bash
     - name: Deploy GitHub pages
       uses: peaceiris/actions-gh-pages@v3
       with:
