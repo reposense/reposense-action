@@ -55,7 +55,7 @@ runs:
         java-version: '11'
         distribution: 'temurin'
     - name: Get RepoSense
-      run: bash ./get-reposense.py --${{ inputs.version }}
+      run: bash ./run.sh ${{ inputs.version }}
       shell: bash
     - name: Generate report
       run: java -jar RepoSense.jar --config ./curr-repo/${{ inputs.configDirectory }}
