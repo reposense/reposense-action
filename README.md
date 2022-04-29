@@ -40,7 +40,7 @@ steps:
 - uses: tlylt/reposense-action@main
   with:
     token: ${{ secrets.GITHUB_TOKEN }} # Required
-    version: 'master' # Optional | Default: release | Other: master/tag v1.6.1/etc
+    version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
     configDirectory: 'configs' # Optional | Default: configs
     service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
 ```
