@@ -4,8 +4,22 @@ This action provides the following functionality for GitHub Actions users:
 
 - Deploy a RepoSense report to github pages/surge
 
-# Usage
+[RepoSense](https://reposense.org/) is a tool for analyzing GitHub repositories and generating reports.
 
+- Read the User Guide [here](https://reposense.org/ug/index.html)
+- Understand how to specify the config files [here](https://reposense.org/ug/configFiles.html)
+
+## Usage
+
+2 Steps process:
+
+- specify the config files in the `configs` folder of your repo.
+  - You may see some sample config files in the `configs` folder.
+  - Using a different folder name is possible, just ensure you pass the correct folder name to the action.
+- Create a `reposense.yml` with the following content in `.github/workflows/`
+  - Make changes as necessary, such as the triggering event
+
+```yaml
 ```yaml
 on:
 # For active deployment on push to main branch
@@ -30,7 +44,7 @@ steps:
     service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
 ```
 
-# Testing
+## Testing
 
 ```yaml
 name: Test reposense-action
