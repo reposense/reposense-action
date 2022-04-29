@@ -16,6 +16,13 @@ runs:
       uses: actions/checkout@v3
       with:
         path: curr-repo
+    - name: Check if config folder exists
+      run: |
+        if [ ! -d "curr-repo/configs" ]; then
+          echo "No configs folder found. Exiting."
+          exit 1
+        fi
+      shell: bash    
     - uses: actions/setup-python@v3
       with:
         python-version: "3.8"
