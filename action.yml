@@ -8,6 +8,10 @@ inputs:
   token:
     description: the required GitHub token for gh-pages deployment
     required: true
+  configDirectory:
+    description: the directory to read the config files from
+    default: 'configs'
+    type: string  
 
 runs:
   using: "composite"
@@ -18,8 +22,8 @@ runs:
         path: curr-repo
     - name: Check if config folder exists
       run: |
-        if [ ! -d "curr-repo/configs" ]; then
-          echo "No configs folder found. Exiting."
+        if [ ! -d "./curr-repo/${{ inputs.configDirectory }}" ]; then
+          echo "No configs folder found. Exiting!"
           exit 1
         fi
       shell: bash    
@@ -39,8 +43,11 @@ runs:
       with:
         repository: tlylt/reposense-action
         path: '.'
-    - name: Generate report
+    - name: Get RepoSense
       run: bash ./run.sh
+      shell: bash
+    - name: Generate report
+      run: java -jar RepoSense.jar --config ./curr-repo/${{ inputs.configDirectory }}
       shell: bash
     - name: Deploy via gh-pages
       if: ${{ success() }}
