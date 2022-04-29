@@ -1,12 +1,12 @@
 name: reposense-action
-description: 'Deploy your RepoSense Report'
+description: 'Deploy your RepoSense Report to GitHub Pages'
 branding: 
   icon: 'upload-cloud'
   color: 'blue'
 
 inputs:
   token:
-    description: the required token
+    description: the required GitHub token for gh-pages deployment
     required: true
 
 runs:
@@ -22,6 +22,11 @@ runs:
     - name: Install dependencies
       run: pip install requests
       shell: bash
+    - name: Install Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
     - name: Checkout Reposense scripts
       uses: actions/checkout@v3
       with:
