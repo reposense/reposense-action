@@ -18,10 +18,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+      with:
+        python-version: "3.8"
     - name: Install dependencies
       run: pip install requests
-    - name: Update permission
-      run: sh "chmod 775 ./get-reposense.py"
     - name: Generate report
       run: sudo bash ./run.sh
     - name: Deploy GitHub pages
