@@ -11,9 +11,9 @@ This action provides the following functionality for GitHub Actions users:
 
 ## Usage
 
-2 Steps process:
+A simple 2-step process:
 
-- specify the config files in the `configs` folder of your repo.
+- Specify the config files in the `configs` folder of your repo.
   - You may see some sample config files in the `configs` folder.
   - Using a different folder name is possible, just ensure you pass the correct folder name to the action.
 - Create a `reposense.yml` with the following content in `.github/workflows/`
