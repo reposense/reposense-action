@@ -6,15 +6,22 @@ branding:
 
 inputs:
   token:
-    description: the required GitHub token for gh-pages deployment
+    description: the required token for deployment
     required: true
   version:
-    description: the RepoSense version to use (eg. release/master/tag v1.6.1)
+    description: the RepoSense version to use (release/master/tag v1.6.1/etc)
     default: 'release'
     type: string
   configDirectory:
     description: the directory to read the config files from
     default: 'configs'
+    type: string
+  service:
+    description: the publishing service (gh-pages/surge)
+    default: 'gh-pages'
+    type: string
+  domain:
+    description: the domain to use
     type: string
 
 runs:
@@ -61,3 +68,16 @@ runs:
         user_name: github-actions[bot]
         user_email: 41898282+github-actions[bot]@users.noreply.github.com
         publish_dir: ./reposense-report
+    - name: Install Node
+      uses: actions/setup-node@v2
+      if: inputs.service == 'surge'
+      with:
+        node-version: 12
+    - name: Deploy via Surge.sh
+      if: inputs.service == 'surge'
+      run: |
+        npm i -g surge
+        surge --project ./reposense-report --domain ${{ inputs.domain }}
+      shell: bash
+      env:
+        SURGE_TOKEN: ${{ inputs.token }}
