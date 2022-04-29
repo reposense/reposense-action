@@ -20,8 +20,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Install dependencies
       run: pip install requests
+    - name: Update permission
+      run: sh "chmod 775 ./get-reposense.py"
     - name: Generate report
-      run: sudo sh ./run.sh
+      run: sudo bash ./run.sh
     - name: Deploy GitHub pages
       uses: peaceiris/actions-gh-pages@v3
       with:
