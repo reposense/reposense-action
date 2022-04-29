@@ -18,14 +18,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        repository: reposense/publish-RepoSense
     - name: Install dependencies
       run: pip install requests
     - name: Generate report
       run: bash ./run.sh
-    - name: Check version
-      run: java -jar RepoSense.jar --version
     - name: Deploy GitHub pages
       uses: peaceiris/actions-gh-pages@v3
       with:
