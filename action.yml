@@ -8,15 +8,19 @@ inputs:
   token:
     description: the required GitHub token for gh-pages deployment
     required: true
+  version:
+    description: the RepoSense version to use (eg. release/master/tag v1.6.1)
+    default: 'release'
+    type: string
   configDirectory:
     description: the directory to read the config files from
     default: 'configs'
-    type: string  
+    type: string
 
 runs:
   using: "composite"
   steps:
-    - name: Checkout Reposense scripts
+    - name: Checkout RepoSense scripts
       uses: actions/checkout@v3
       with:
         repository: tlylt/reposense-action
@@ -31,7 +35,7 @@ runs:
           echo "No configs folder found. Exiting!"
           exit 1
         fi
-      shell: bash    
+      shell: bash
     - uses: actions/setup-python@v3
       with:
         python-version: "3.8"
@@ -43,14 +47,8 @@ runs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Check files
-      run: ls -la
-      shell: bash
-    - name: Check file content
-      run: ls -la ./curr-repo/${{ inputs.configDirectory }}
-      shell: bash
     - name: Get RepoSense
-      run: bash ./run.sh
+      run: bash ./get-reposense.py --${{ inputs.version }}
       shell: bash
     - name: Generate report
       run: java -jar RepoSense.jar --config ./curr-repo/${{ inputs.configDirectory }}
