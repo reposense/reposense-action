@@ -16,6 +16,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Checkout Reposense scripts
+      uses: actions/checkout@v3
+      with:
+        repository: tlylt/reposense-action
+        path: '.'
     - name: Checkout source repo
       uses: actions/checkout@v3
       with:
@@ -38,11 +43,6 @@ runs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Checkout Reposense scripts
-      uses: actions/checkout@v3
-      with:
-        repository: tlylt/reposense-action
-        path: '.'
     - name: Check files
       run: ls -la
       shell: bash
