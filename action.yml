@@ -43,6 +43,12 @@ runs:
       with:
         repository: tlylt/reposense-action
         path: '.'
+    - name: Check files
+      run: ls -la
+      shell: bash
+    - name: Check file content
+      run: ls -la ./curr-repo/${{ inputs.configDirectory }}
+      shell: bash
     - name: Get RepoSense
       run: bash ./run.sh
       shell: bash
