@@ -31,7 +31,7 @@ runs:
       run: bash ./run.sh
       shell: bash
     - name: Deploy via gh-pages
-      if: {{ success }}
+      if: ${{ success() }}
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ inputs.token }}
