@@ -1,0 +1,39 @@
+name: reposense-action
+description: 'Deploy your RepoSense Report'
+branding: 
+  icon: 'upload-cloud'
+  color: 'blue'
+
+inputs:
+  token:
+    description: the required token
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    steps:
+    - name: Checkout source repo
+      uses: actions/checkout@v3
+      with:
+        path: curr-repo
+    - uses: actions/setup-python@v3
+      with:
+        python-version: "3.8"
+    - name: Install dependencies
+      run: pip install requests
+    - name: Checkout Reposense scripts
+      uses: actions/checkout@v3
+      with:
+        repository: tlylt/reposense-action
+        path: reposense-action
+    - name: Generate report
+      run: bash ./reposense-action/run.sh
+    - name: Deploy via gh-pages
+      if: inputs.service == 'gh-pages'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ inputs.token }}
+        user_name: github-actions[bot]
+        user_email: 41898282+github-actions[bot]@users.noreply.github.com
+        publish_dir: ./reposense-action/reposense-report
