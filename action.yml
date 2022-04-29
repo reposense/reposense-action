@@ -26,9 +26,9 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: tlylt/reposense-action
-        path: reposense-action
+        path: '.'
     - name: Generate report
-      run: bash ./reposense-action/run.sh
+      run: bash ./run.sh
       shell: bash
     - name: Deploy via gh-pages
       if: inputs.service == 'gh-pages'
@@ -37,4 +37,4 @@ runs:
         github_token: ${{ inputs.token }}
         user_name: github-actions[bot]
         user_email: 41898282+github-actions[bot]@users.noreply.github.com
-        publish_dir: ./reposense-action/reposense-report
+        publish_dir: ./reposense-report
