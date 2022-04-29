@@ -6,11 +6,11 @@ This action provides the following functionality for GitHub Actions users:
 
 # Usage
 
-This action will detect the operating system and install Graphviz cross-platform. You may use the action without any additional parameters.
-
 ```yaml
 steps:
-- uses: tlylt/install-graphviz@v1
+- uses: tlylt/reposense-action@main
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 Work in progress
