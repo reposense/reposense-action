@@ -20,7 +20,8 @@ A simple 2-step process:
   - Make changes as necessary, such as the triggering event
 
 ```yaml
-```yaml
+name: Deploy RepoSense report
+
 on:
 # For active deployment on push to main branch
   push:
