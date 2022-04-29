@@ -36,13 +36,16 @@ on:
 #   schedule:
 #     - cron:  '0 0 * * *'
 
-steps:
-- uses: tlylt/reposense-action@main
-  with:
-    token: ${{ secrets.GITHUB_TOKEN }} # Required
-    version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
-    configDirectory: 'configs' # Optional | Default: configs
-    service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tlylt/reposense-action@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }} # Required
+        version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
+        configDirectory: 'configs' # Optional | Default: configs
+        service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
 ```
 
 ## Testing
