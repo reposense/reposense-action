@@ -21,6 +21,7 @@ runs:
         python-version: "3.8"
     - name: Install dependencies
       run: pip install requests
+      shell: bash
     - name: Checkout Reposense scripts
       uses: actions/checkout@v3
       with:
@@ -28,6 +29,7 @@ runs:
         path: reposense-action
     - name: Generate report
       run: bash ./reposense-action/run.sh
+      shell: bash
     - name: Deploy via gh-pages
       if: inputs.service == 'gh-pages'
       uses: peaceiris/actions-gh-pages@v3
