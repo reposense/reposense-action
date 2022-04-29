@@ -1,0 +1,20 @@
+name: Test
+
+on: 
+  push:
+    branches:
+      - main
+# For scheduled deployment with Cron Jobs.
+## Examples of cron schedule expressions:
+### '0 * * * *': hourly
+### '0 0 * * *': daily
+### '0 0 1 * *': monthly
+#   schedule:
+#     - cron:  '0 0 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: tlylt/reposense-action@main
