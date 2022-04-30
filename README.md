@@ -95,6 +95,65 @@ The domain that the site is available at. Required if `service` chosen is Surge.
 - A custom domain that you have configured with Surge
   - Read the [Surge documentation](https://surge.sh/help/adding-a-custom-domain) to understand how to set it up
 
+## Recipes
+
+### Deploy to Github Pages every day
+
+```yaml
+name: RepoSense Action
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tlylt/reposense-action@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### Deploy with a different config folder name
+
+```yaml
+name: RepoSense Action
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tlylt/reposense-action@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        configDirectory: 'reposense-configs'
+```
+
+### Deploy with surge.sh
+
+```yaml
+name: RepoSense Action
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tlylt/reposense-action@main
+      with:
+        token: ${{ secrets.SURGE_TOKEN }}
+        service: 'surge'
+        domain: 'whatever-subdomain-test.surge.sh'
+```
+
 ## Testing
 
 ```yaml
