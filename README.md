@@ -4,10 +4,17 @@ This action provides the following functionality for GitHub Actions users:
 
 - Deploy a RepoSense report to github pages/surge
 
+See an example of the [dashboard](https://tlylt.github.io/reposense-action/) hosted for this very repository
+
+<details>
+<summary> <b>What is RepoSense</b> </summary>
+
 [RepoSense](https://reposense.org/) is a tool for analyzing GitHub repositories and generating reports.
 
 - Read the User Guide [here](https://reposense.org/ug/index.html)
 - Understand how to specify the config files [here](https://reposense.org/ug/configFiles.html)
+
+</details>
 
 ## Usage
 
