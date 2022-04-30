@@ -1,5 +1,7 @@
 # reposense-action
 
+[![GitHub CI](https://github.com/tlylt/reposense-action/actions/workflows/test.yml/badge.svg)](https://github.com/tlylt/reposense-action/actions/workflows/test.yml)
+
 This action provides the following functionality for GitHub Actions users:
 
 - Deploy a RepoSense report to github pages/surge
