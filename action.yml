@@ -61,7 +61,7 @@ runs:
       run: java -jar RepoSense.jar --config ./curr-repo/${{ inputs.configDirectory }}
       shell: bash
     - name: Deploy via gh-pages
-      if: ${{ success() }}
+      if: inputs.service == 'gh-pages'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ inputs.token }}

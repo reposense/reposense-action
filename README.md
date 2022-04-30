@@ -46,6 +46,7 @@ jobs:
         version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
         configDirectory: 'configs' # Optional | Default: configs
         service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
+        domain: '' # Optional (Required if service = surge) | Default: '' | Other: '<subDomain>.surge.sh'
 ```
 
 ## Testing
