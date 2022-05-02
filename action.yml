@@ -2,7 +2,7 @@ name: reposense-action
 description: 'Deploy your RepoSense Report'
 branding: 
   icon: 'upload-cloud'
-  color: 'blue'
+  color: 'green'
 
 inputs:
   token:
