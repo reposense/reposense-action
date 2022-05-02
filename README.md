@@ -84,7 +84,7 @@ Currently two types of tokens are supported (correspond to the two supported pub
     - `SURGE_TOKEN` is the environment secret name
   - Require registration with an email address
   - After retrieving the token, put the token as a repository secret in your repository
-  - See [here](https://markbind.org/userGuide/deployingTheSite.html#previewing-prs-using-surge) for a detailed guide on how to retrieve the token
+  - See [here](https://surge-token-guide.surge.sh/) for a detailed guide on how to retrieve the token
 
 ### domain
 
