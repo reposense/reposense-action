@@ -1,5 +1,5 @@
 name: reposense-action
-description: 'Deploy your RepoSense Report to GitHub Pages'
+description: 'Deploy your RepoSense Report'
 branding: 
   icon: 'upload-cloud'
   color: 'blue'

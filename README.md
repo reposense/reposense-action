@@ -4,9 +4,12 @@
 
 This action provides the following functionality for GitHub Actions users:
 
-- Deploy a RepoSense report to github pages/surge
+- Deploy a RepoSense report to GitHub pages/surge
 
-See an example of the [dashboard](https://tlylt.github.io/reposense-action/) hosted for this very repository
+See an example of the report hosted for this very repository
+
+- [with GitHub pages](https://tlylt.github.io/reposense-action/)
+- [with surge.sh](https://reposense-action.surge.sh/)
 
 <details>
 <summary> <b>What is RepoSense</b> </summary>
