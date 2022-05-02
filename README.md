@@ -177,4 +177,11 @@ jobs:
         version: 'release'
         configDirectory: 'configs'
         service: 'gh-pages'
+    - uses: tlylt/reposense-action@main
+      with:
+        token: ${{ secrets.SURGE_TOKEN }} # Required
+        version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
+        configDirectory: 'configs' # Optional | Default: configs
+        service: 'surge'
+        domain: 'reposense-action.surge.sh'
 ```
