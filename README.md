@@ -188,3 +188,15 @@ jobs:
         service: 'surge'
         domain: 'reposense-action.surge.sh'
 ```
+
+## Troubleshooting
+
+### Workflow errors
+
+1. You may need to ensure that the scripts are executable (which may not be true when using a Windows machine)
+   - By doing:
+     - `git update-index --chmod=+x run.sh`
+     - `git update-index --chmod=+x get-reposense.py`
+
+1. You may need to ensure that the access is granted to the workflows for deployment
+   - By going to `settings` in the GitHub UI and ensuring that the `Actions > General > Workflow permissions` are set to `Read and write permissions`
