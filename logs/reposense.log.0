@@ -1,26 +1,26 @@
-Jun 09, 2022 12:48:17 AM reposense.parser.CsvParser validateHeader
+Jun 10, 2022 12:49:39 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Branch,  File formats,  Ignore Glob List,  Ignore Authors List,  Ignore Commits List
-Jun 09, 2022 12:48:17 AM reposense.parser.CsvParser validateHeader
+Jun 10, 2022 12:49:39 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Author's GitHub ID,  Branch,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
-Jun 09, 2022 12:48:17 AM reposense.report.RepoCloner spawnCloneProcess
+Jun 10, 2022 12:49:39 AM reposense.report.RepoCloner spawnCloneProcess
 INFO: Cloning in parallel from https://github.com/tlylt/reposense-action.git...
-Jun 09, 2022 12:48:17 AM reposense.report.RepoCloner waitForCloneProcess
+Jun 10, 2022 12:49:39 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Waiting for cloning of https://github.com/tlylt/reposense-action.git to complete...
-Jun 09, 2022 12:48:18 AM reposense.report.RepoCloner waitForCloneProcess
+Jun 10, 2022 12:49:40 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Cloning of https://github.com/tlylt/reposense-action.git completed!
-Jun 09, 2022 12:48:18 AM reposense.report.ReportGenerator analyzeRepos
+Jun 10, 2022 12:49:40 AM reposense.report.ReportGenerator analyzeRepos
 INFO: [1/1] Analyzing https://github.com/tlylt/reposense-action.git (main)...
-Jun 09, 2022 12:48:18 AM reposense.report.ReportGenerator updateRepoConfig
+Jun 10, 2022 12:49:40 AM reposense.report.ReportGenerator updateRepoConfig
 INFO: https://github.com/tlylt/reposense-action.git (main) does not contain a standalone config file.
-Jun 09, 2022 12:48:18 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+Jun 10, 2022 12:49:40 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
 INFO: Extracting relevant file info from https://github.com/tlylt/reposense-action.git (main)...
-Jun 09, 2022 12:48:18 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+Jun 10, 2022 12:49:40 AM reposense.commits.CommitInfoExtractor extractCommitInfos
 INFO: Extracting commits info for https://github.com/tlylt/reposense-action.git (main)...
-Jun 09, 2022 12:48:18 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+Jun 10, 2022 12:49:40 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
 INFO: Analyzing commits info for https://github.com/tlylt/reposense-action.git (main)...
-Jun 09, 2022 12:48:18 AM reposense.report.ReportGenerator analyzeRepo
+Jun 10, 2022 12:49:40 AM reposense.report.ReportGenerator analyzeRepo
 INFO: Analysis of https://github.com/tlylt/reposense-action.git (main) completed!
-Jun 09, 2022 12:48:18 AM reposense.report.ReportGenerator generateReposReport
+Jun 10, 2022 12:49:40 AM reposense.report.ReportGenerator generateReposReport
 INFO: The report is generated at /home/runner/work/reposense-action/reposense-action/reposense-report
-Jun 09, 2022 12:48:18 AM reposense.RepoSense main
-INFO: Elapsed processing time: 1.05 second(s)
+Jun 10, 2022 12:49:40 AM reposense.RepoSense main
+INFO: Elapsed processing time: 1.29 second(s)
