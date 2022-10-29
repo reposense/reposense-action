@@ -100,6 +100,14 @@ The domain that the site is available at. Required if `service` chosen is Surge.
 - A custom domain that you have configured with Surge
   - Read the [Surge documentation](https://surge.sh/help/adding-a-custom-domain) to understand how to set it up
 
+### cliArgs
+
+Additional arguments to pass to the RepoSense CLI. See [here](https://reposense.org/ug/cli.html) for more details.
+
+- '--since d1'
+  - Useful if you want to generate a report for a specific period of time, e.g. the start of the commit history to the current date
+  - The default (without the above) is to generate a report for the past 1 month
+
 ## Recipes
 
 ### Deploy to Github Pages every day
