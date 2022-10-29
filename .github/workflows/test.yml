@@ -1,11 +1,11 @@
 name: Test
 
-on: 
+on:
   push:
     branches:
       - main
   schedule:
-    - cron:  '0 0 * * *'
+    - cron: '0 0 * * *'
 # For scheduled deployment with Cron Jobs.
 ## Examples of cron schedule expressions:
 ### '0 * * * *': hourly
@@ -17,16 +17,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: tlylt/reposense-action@main
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }} # Required
-        version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
-        configDirectory: 'configs' # Optional | Default: configs
-        service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
-    - uses: tlylt/reposense-action@main
-      with:
-        token: ${{ secrets.SURGE_TOKEN }} # Required
-        version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
-        configDirectory: 'configs' # Optional | Default: configs
-        service: 'surge'
-        domain: 'reposense-action.surge.sh'
+      - uses: tlylt/reposense-action@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Required
+          version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
+          configDirectory: 'configs' # Optional | Default: configs
+          service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
+          cliArgs: '--since d1' # Optional | Default: ''
+      - uses: tlylt/reposense-action@main
+        with:
+          token: ${{ secrets.SURGE_TOKEN }} # Required
+          version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
+          configDirectory: 'configs' # Optional | Default: configs
+          service: 'surge'
+          domain: 'reposense-action.surge.sh'

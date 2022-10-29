@@ -1,6 +1,6 @@
 name: reposense-action
 description: 'Deploy your RepoSense Report'
-branding: 
+branding:
   icon: 'upload-cloud'
   color: 'green'
 
@@ -23,9 +23,13 @@ inputs:
   domain:
     description: the domain to use
     type: string
+  cliArgs:
+    description: any other arguments to pass to generate RepoSense report
+    default: ''
+    type: string
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Checkout RepoSense scripts
       uses: actions/checkout@v3
@@ -45,7 +49,7 @@ runs:
       shell: bash
     - uses: actions/setup-python@v3
       with:
-        python-version: "3.8"
+        python-version: '3.8'
     - name: Install dependencies
       run: pip install requests
       shell: bash
@@ -58,7 +62,7 @@ runs:
       run: bash ./run.sh ${{ inputs.version }}
       shell: bash
     - name: Generate report
-      run: java -jar RepoSense.jar --config ./curr-repo/${{ inputs.configDirectory }}
+      run: java -jar RepoSense.jar --config ./curr-repo/${{ inputs.configDirectory }} ${{ inputs.cliArgs}}
       shell: bash
     - name: Deploy via gh-pages
       if: inputs.service == 'gh-pages'
