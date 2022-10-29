@@ -31,3 +31,4 @@ jobs:
           configDirectory: 'configs' # Optional | Default: configs
           service: 'surge'
           domain: 'reposense-action.surge.sh'
+          cliArgs: '--since d1' # Optional | Default: ''
