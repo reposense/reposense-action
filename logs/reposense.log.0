@@ -1,8 +1,8 @@
-Dec 22, 2022 12:43:09 AM reposense.parser.CsvParser validateHeader
+Dec 23, 2022 12:40:31 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Branch,  File formats,  Ignore Glob List,  Ignore Authors List,  Ignore Commits List
-Dec 22, 2022 12:43:09 AM reposense.parser.CsvParser validateHeader
+Dec 23, 2022 12:40:32 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Author's GitHub ID,  Branch,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
-Dec 22, 2022 12:43:09 AM reposense.git.GitConfig getGlobalGitLfsConfig
+Dec 23, 2022 12:40:32 AM reposense.git.GitConfig getGlobalGitLfsConfig
 WARNING: Could not get global git lfs config
 java.lang.RuntimeException: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
 fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
@@ -18,25 +18,25 @@ fatal: unable to read config file '/home/runner/.gitconfig': No such file or dir
 	at reposense.system.CommandRunner.runCommand(CommandRunner.java:21)
 	... 3 more
 
-Dec 22, 2022 12:43:09 AM reposense.report.RepoCloner spawnCloneProcess
+Dec 23, 2022 12:40:32 AM reposense.report.RepoCloner spawnCloneProcess
 INFO: Cloning in parallel from https://github.com/tlylt/reposense-action.git...
-Dec 22, 2022 12:43:09 AM reposense.report.RepoCloner waitForCloneProcess
+Dec 23, 2022 12:40:32 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Waiting for cloning of https://github.com/tlylt/reposense-action.git to complete...
-Dec 22, 2022 12:43:10 AM reposense.report.RepoCloner waitForCloneProcess
+Dec 23, 2022 12:40:35 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Cloning of https://github.com/tlylt/reposense-action.git completed!
-Dec 22, 2022 12:43:10 AM reposense.report.ReportGenerator analyzeRepos
+Dec 23, 2022 12:40:35 AM reposense.report.ReportGenerator analyzeRepos
 INFO: [1/1] Analyzing https://github.com/tlylt/reposense-action.git (main)...
-Dec 22, 2022 12:43:10 AM reposense.report.ReportGenerator updateRepoConfig
+Dec 23, 2022 12:40:35 AM reposense.report.ReportGenerator updateRepoConfig
 INFO: https://github.com/tlylt/reposense-action.git (main) does not contain a standalone config file.
-Dec 22, 2022 12:43:10 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+Dec 23, 2022 12:40:35 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
 INFO: Extracting relevant file info from https://github.com/tlylt/reposense-action.git (main)...
-Dec 22, 2022 12:43:10 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+Dec 23, 2022 12:40:35 AM reposense.commits.CommitInfoExtractor extractCommitInfos
 INFO: Extracting commits info for https://github.com/tlylt/reposense-action.git (main)...
-Dec 22, 2022 12:43:10 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+Dec 23, 2022 12:40:35 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
 INFO: Analyzing commits info for https://github.com/tlylt/reposense-action.git (main)...
-Dec 22, 2022 12:43:11 AM reposense.report.ReportGenerator analyzeRepo
+Dec 23, 2022 12:40:35 AM reposense.report.ReportGenerator analyzeRepo
 INFO: Analysis of https://github.com/tlylt/reposense-action.git (main) completed!
-Dec 22, 2022 12:43:11 AM reposense.report.ReportGenerator generateReposReport
+Dec 23, 2022 12:40:35 AM reposense.report.ReportGenerator generateReposReport
 INFO: The report is generated at /home/runner/work/reposense-action/reposense-action/reposense-report
-Dec 22, 2022 12:43:11 AM reposense.RepoSense main
-INFO: Elapsed processing time: 2.03 second(s)
+Dec 23, 2022 12:40:35 AM reposense.RepoSense main
+INFO: Elapsed processing time: 3.93 second(s)
