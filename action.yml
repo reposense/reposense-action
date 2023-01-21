@@ -34,7 +34,7 @@ runs:
     - name: Checkout RepoSense scripts
       uses: actions/checkout@v3
       with:
-        repository: tlylt/reposense-action
+        repository: reposense/reposense-action
         path: '.'
     - name: Checkout source repo
       uses: actions/checkout@v3
