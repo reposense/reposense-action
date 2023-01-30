@@ -1,6 +1,6 @@
 # reposense-action
 
-[![GitHub CI](https://github.com/tlylt/reposense-action/actions/workflows/test.yml/badge.svg)](https://github.com/tlylt/reposense-action/actions/workflows/test.yml)
+[![GitHub CI](https://github.com/reposense/reposense-action/actions/workflows/test.yml/badge.svg)](https://github.com/reposense/reposense-action/actions/workflows/test.yml)
 
 This action provides the following functionality for GitHub Actions users:
 
@@ -8,7 +8,7 @@ This action provides the following functionality for GitHub Actions users:
 
 See an example of the report hosted for this very repository
 
-- [with GitHub pages](https://tlylt.github.io/reposense-action/)
+- [with GitHub pages](https://reposense.github.io/reposense-action/)
 - [with surge.sh](https://reposense-action.surge.sh/)
 
 <details>
