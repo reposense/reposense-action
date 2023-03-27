@@ -1,6 +1,6 @@
 # reposense-action
 
-[![GitHub CI](https://github.com/tlylt/reposense-action/actions/workflows/test.yml/badge.svg)](https://github.com/tlylt/reposense-action/actions/workflows/test.yml)
+[![GitHub CI](https://github.com/reposense/reposense-action/actions/workflows/test.yml/badge.svg)](https://github.com/reposense/reposense-action/actions/workflows/test.yml)
 
 This action provides the following functionality for GitHub Actions users:
 
@@ -8,7 +8,7 @@ This action provides the following functionality for GitHub Actions users:
 
 See an example of the report hosted for this very repository
 
-- [with GitHub pages](https://tlylt.github.io/reposense-action/)
+- [with GitHub pages](https://reposense.github.io/reposense-action/)
 - [with surge.sh](https://reposense-action.surge.sh/)
 
 <details>
@@ -52,7 +52,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: tlylt/reposense-action@v1
+    - uses: reposense/reposense-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }} # Required
         version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
@@ -123,7 +123,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: tlylt/reposense-action@v1
+    - uses: reposense/reposense-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -141,7 +141,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: tlylt/reposense-action@v1
+    - uses: reposense/reposense-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         configDirectory: 'reposense-configs'
@@ -160,7 +160,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: tlylt/reposense-action@v1
+    - uses: reposense/reposense-action@v1
       with:
         token: ${{ secrets.SURGE_TOKEN }}
         service: 'surge'
@@ -182,13 +182,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: tlylt/reposense-action@main
+    - uses: reposense/reposense-action@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         version: 'release'
         configDirectory: 'configs'
         service: 'gh-pages'
-    - uses: tlylt/reposense-action@main
+    - uses: reposense/reposense-action@main
       with:
         token: ${{ secrets.SURGE_TOKEN }} # Required
         version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
