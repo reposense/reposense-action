@@ -1,8 +1,8 @@
-Mar 27, 2023 1:07:03 AM reposense.parser.CsvParser validateHeader
+Mar 28, 2023 12:05:51 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Branch,  File formats,  Ignore Glob List,  Ignore Authors List,  Ignore Commits List
-Mar 27, 2023 1:07:03 AM reposense.parser.CsvParser validateHeader
+Mar 28, 2023 12:05:51 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Author's GitHub ID,  Branch,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
-Mar 27, 2023 1:07:03 AM reposense.git.GitConfig getGlobalGitLfsConfig
+Mar 28, 2023 12:05:51 AM reposense.git.GitConfig getGlobalGitLfsConfig
 WARNING: Could not get global git lfs config
 java.lang.RuntimeException: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
 fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
@@ -18,25 +18,25 @@ fatal: unable to read config file '/home/runner/.gitconfig': No such file or dir
 	at reposense.system.CommandRunner.runCommand(CommandRunner.java:21)
 	... 3 more
 
-Mar 27, 2023 1:07:03 AM reposense.report.RepoCloner spawnCloneProcess
+Mar 28, 2023 12:05:52 AM reposense.report.RepoCloner spawnCloneProcess
 INFO: Cloning in parallel from https://github.com/reposense/reposense-action.git...
-Mar 27, 2023 1:07:03 AM reposense.report.RepoCloner waitForCloneProcess
+Mar 28, 2023 12:05:52 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Waiting for cloning of https://github.com/reposense/reposense-action.git to complete...
-Mar 27, 2023 1:07:04 AM reposense.report.RepoCloner waitForCloneProcess
+Mar 28, 2023 12:05:53 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Cloning of https://github.com/reposense/reposense-action.git completed!
-Mar 27, 2023 1:07:04 AM reposense.report.ReportGenerator analyzeRepos
+Mar 28, 2023 12:05:53 AM reposense.report.ReportGenerator analyzeRepos
 INFO: [1/1] Analyzing https://github.com/reposense/reposense-action.git (main)...
-Mar 27, 2023 1:07:05 AM reposense.report.ReportGenerator updateRepoConfig
+Mar 28, 2023 12:05:53 AM reposense.report.ReportGenerator updateRepoConfig
 INFO: https://github.com/reposense/reposense-action.git (main) does not contain a standalone config file.
-Mar 27, 2023 1:07:05 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+Mar 28, 2023 12:05:53 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
 INFO: Extracting relevant file info from https://github.com/reposense/reposense-action.git (main)...
-Mar 27, 2023 1:07:05 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+Mar 28, 2023 12:05:53 AM reposense.commits.CommitInfoExtractor extractCommitInfos
 INFO: Extracting commits info for https://github.com/reposense/reposense-action.git (main)...
-Mar 27, 2023 1:07:05 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+Mar 28, 2023 12:05:53 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
 INFO: Analyzing commits info for https://github.com/reposense/reposense-action.git (main)...
-Mar 27, 2023 1:07:05 AM reposense.report.ReportGenerator analyzeRepo
+Mar 28, 2023 12:05:53 AM reposense.report.ReportGenerator analyzeRepo
 INFO: Analysis of https://github.com/reposense/reposense-action.git (main) completed!
-Mar 27, 2023 1:07:05 AM reposense.report.ReportGenerator generateReposReport
+Mar 28, 2023 12:05:53 AM reposense.report.ReportGenerator generateReposReport
 INFO: The report is generated at /home/runner/work/reposense-action/reposense-action/reposense-report
-Mar 27, 2023 1:07:05 AM reposense.RepoSense main
-INFO: Elapsed processing time: 2.34 second(s)
+Mar 28, 2023 12:05:53 AM reposense.RepoSense main
+INFO: Elapsed processing time: 2.03 second(s)
