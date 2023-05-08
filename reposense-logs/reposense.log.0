@@ -1,0 +1,44 @@
+May 08, 2023 12:08:12 AM reposense.system.LogsManager addFileHandler
+INFO: Log temp folder has been successfully created
+May 08, 2023 12:08:12 AM reposense.parser.CsvParser validateHeader
+INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Branch,  File formats,  Ignore Glob List,  Ignore Authors List,  Ignore Commits List
+May 08, 2023 12:08:12 AM reposense.parser.CsvParser validateHeader
+INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Author's GitHub ID,  Branch,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
+May 08, 2023 12:08:12 AM reposense.git.GitConfig getGlobalGitLfsConfig
+WARNING: Could not get global git lfs config
+java.lang.RuntimeException: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
+fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
+
+	at reposense.system.CommandRunner.runCommand(CommandRunner.java:23)
+	at reposense.git.GitConfig.getGitGlobalConfig(GitConfig.java:86)
+	at reposense.git.GitConfig.getGlobalGitLfsConfig(GitConfig.java:40)
+	at reposense.RepoSense.main(RepoSense.java:78)
+Caused by: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
+fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
+
+	at reposense.system.CommandRunnerProcess.waitForProcess(CommandRunnerProcess.java:46)
+	at reposense.system.CommandRunner.runCommand(CommandRunner.java:21)
+	... 3 more
+
+May 08, 2023 12:08:12 AM reposense.report.RepoCloner spawnCloneProcess
+INFO: Cloning in parallel from https://github.com/reposense/reposense-action.git...
+May 08, 2023 12:08:12 AM reposense.report.RepoCloner waitForCloneProcess
+INFO: Waiting for cloning of https://github.com/reposense/reposense-action.git to complete...
+May 08, 2023 12:08:13 AM reposense.report.RepoCloner waitForCloneProcess
+INFO: Cloning of https://github.com/reposense/reposense-action.git completed!
+May 08, 2023 12:08:13 AM reposense.report.ReportGenerator analyzeRepos
+INFO: [1/1] Analyzing https://github.com/reposense/reposense-action.git (main)...
+May 08, 2023 12:08:13 AM reposense.report.ReportGenerator updateRepoConfig
+INFO: https://github.com/reposense/reposense-action.git (main) does not contain a standalone config file.
+May 08, 2023 12:08:13 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+INFO: Extracting relevant file info from https://github.com/reposense/reposense-action.git (main)...
+May 08, 2023 12:08:13 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+INFO: Extracting commits info for https://github.com/reposense/reposense-action.git (main)...
+May 08, 2023 12:08:13 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+INFO: Analyzing commits info for https://github.com/reposense/reposense-action.git (main)...
+May 08, 2023 12:08:13 AM reposense.report.ReportGenerator analyzeRepo
+INFO: Analysis of https://github.com/reposense/reposense-action.git (main) completed!
+May 08, 2023 12:08:13 AM reposense.report.ReportGenerator generateReposReport
+INFO: The report is generated at /home/runner/work/reposense-action/reposense-action/reposense-report
+May 08, 2023 12:08:13 AM reposense.RepoSense main
+INFO: Elapsed processing time: 1.34 second(s)
